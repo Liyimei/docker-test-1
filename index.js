@@ -94,6 +94,6 @@ http
     }
     res.end("ok");
   })
-  .listen(6666, () => {
+  .listen(80, () => {
     console.log("server is ready");
   });
