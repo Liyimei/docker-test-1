@@ -93,6 +93,7 @@ http
       console.log("deploy success");
     }
     res.end("ok");
+    console.log("OK");
   })
   .listen(80, () => {
     console.log("server is ready");
