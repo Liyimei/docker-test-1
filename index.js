@@ -39,7 +39,8 @@ http
       const data = await resolvePost(req);
       const projectDir = path.resolve(__dirname, `./${data.repository.name}`);
       deleteFolderRecursive(projectDir);
-
+      console.log(data);
+      console.log(projectDir);
       // 拉取仓库最新代码
       execSync(
         `git clone https://github.com/Liyimei/${data.repository.name}.git ${projectDir}`,
@@ -47,6 +48,7 @@ http
           stdio: "inherit",
         }
       );
+      console.log("代码拉取");
 
       // 复制 Dockerfile 到项目目录
       fs.copyFileSync(
@@ -79,7 +81,7 @@ http
           stdio: "inherit",
         }
       );
-
+      console.log(1111);
       // 创建 docker 容器
       execSync(
         `docker run -d -p 8888:80 --name ${data.repository.name}-container ${data.repository.name}-image:latest`,
