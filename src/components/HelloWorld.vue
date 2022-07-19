@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>docker自动化部署测试</p>
-    <p>change</p>
+    <p>liyimei test</p>
   </div>
 </template>
 
